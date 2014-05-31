@@ -1,0 +1,16 @@
+<div ng-controller="BlogCtrl">
+  <div class="header">
+    <ul class="nav nav-pills pull-right" ng-repeat="author in authors">
+      <li ng-class="{active: activeClass($index)}"><a ng-href="#" ng-click="filterData($index)">{{author}}</a></li>
+    </ul>
+    <h3 class="text-muted">Stooge Bloggerz</h3>
+  </div>
+  <div class="blog">
+    <h1>Latest Posts</h1>
+  </div>
+  <div ng-repeat="post in blogPosts | filter: filters">
+    <h3>{{post.title}}</h3>
+    <p>{{post.body}}</p>
+    <p class="text-muted">{{post.author}}</p>
+  </div>
+</div>
